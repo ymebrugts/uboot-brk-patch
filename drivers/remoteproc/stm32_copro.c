@@ -12,6 +12,7 @@
 #include <reset.h>
 #include <syscon.h>
 #include <asm/io.h>
+#include <asm/arch/stm32mp1_smc.h>
 
 #define RCC_GCR_HOLD_BOOT	0
 #define RCC_GCR_RELEASE_BOOT	1
@@ -23,6 +24,7 @@
  * @hold_boot_offset:	offset of the register controlling the hold boot setting
  * @hold_boot_mask:	bitmask of the register for the hold boot field
  * @is_running:		is the remote processor running
+ * @secured_soc:	TZEN flag (register protection)
  */
 struct stm32_copro_privdata {
 	struct reset_ctl reset_ctl;
@@ -30,6 +32,7 @@ struct stm32_copro_privdata {
 	uint hold_boot_offset;
 	uint hold_boot_mask;
 	bool is_running;
+	bool secured_soc;
 };
 
 /**
@@ -42,6 +45,7 @@ static int stm32_copro_probe(struct udevice *dev)
 	struct stm32_copro_privdata *priv;
 	struct regmap *regmap;
 	const fdt32_t *cell;
+	uint tz_offset, tz_mask, tzen;
 	int len, ret;
 
 	priv = dev_get_priv(dev);
@@ -69,6 +73,31 @@ static int stm32_copro_probe(struct udevice *dev)
 		return ret;
 	}
 
+	regmap = syscon_regmap_lookup_by_phandle(dev, "st,syscfg-tz");
+	if (IS_ERR(regmap)) {
+		dev_dbg(dev, "unable to find tz regmap (%ld)\n",
+			PTR_ERR(regmap));
+		return -EINVAL;
+	}
+
+	cell = dev_read_prop(dev, "st,syscfg-tz", &len);
+	if (3 * sizeof(fdt32_t) - len > 0) {
+		dev_dbg(dev, "tz offset and mask not available\n");
+		return -EINVAL;
+	}
+
+	tz_offset = fdtdec_get_number(cell + 1, 1);
+
+	tz_mask = fdtdec_get_number(cell + 2, 1);
+
+	ret = regmap_read(regmap, tz_offset, &tzen);
+	if (ret) {
+		dev_dbg(dev, "failed to read soc secure state\n");
+		return ret;
+	}
+
+	priv->secured_soc = !!(tzen & tz_mask);
+
 	dev_dbg(dev, "probed\n");
 
 	return 0;
@@ -89,6 +118,11 @@ static int stm32_copro_set_hold_boot(struct udevice *dev, bool hold)
 	priv = dev_get_priv(dev);
 
 	val = hold ? RCC_GCR_HOLD_BOOT : RCC_GCR_RELEASE_BOOT;
+
+	if (priv->secured_soc) {
+		return stm32_smc_exec(STM32_SMC_RCC, STM32_SMC_REG_WRITE,
+				      priv->hold_boot_offset, val);
+	}
 
 	/*
 	 * Note: shall run an SMC call (STM32_SMC_RCC) if platform is secured.
