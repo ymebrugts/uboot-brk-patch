@@ -18,7 +18,15 @@
 #define STM32_SMC_VERSION		0x82000000
 
 /* Secure Service access from Non-secure */
+#define STM32_SMC_RCC			0x82001000
+#define STM32_SMC_PWR			0x82001001
+#define STM32_SMC_RTC			0x82001002
 #define STM32_SMC_BSEC			0x82001003
+
+/* Register access service use for RCC/RTC/PWR */
+#define STM32_SMC_REG_WRITE		0x1
+#define STM32_SMC_REG_SET		0x2
+#define STM32_SMC_REG_CLEAR		0x3
 
 /* Service for BSEC */
 #define STM32_SMC_READ_SHADOW		0x01
