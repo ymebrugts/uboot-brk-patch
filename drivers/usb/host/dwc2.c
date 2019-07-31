@@ -1418,6 +1418,24 @@ static int dwc2_usb_probe(struct udevice *dev)
 	if (ret)
 		return ret;
 
+	if (CONFIG_IS_ENABLED(ARCH_STM32MP) &&
+	    device_is_compatible(dev, "st,stm32mp1-hsotg")) {
+		struct udevice *usb33d_supply;
+
+		ret = device_get_supply_regulator(dev, "usb33d-supply",
+						  &usb33d_supply);
+		if (ret) {
+			dev_err(dev,
+				"can't get voltage level detector supply\n");
+		} else {
+			ret = regulator_set_enable(usb33d_supply, true);
+			if (ret) {
+				dev_err(dev,
+					"can't enable voltage level detector supply\n");
+			}
+		}
+	}
+
 	return dwc2_init_common(dev, priv);
 }
 
