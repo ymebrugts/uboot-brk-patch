@@ -509,8 +509,9 @@ __weak int setup_mac_address(void)
 		return -EINVAL;
 	}
 	pr_debug("OTP MAC address = %pM\n", enetaddr);
-	ret = !eth_env_set_enetaddr("ethaddr", enetaddr);
-	if (!ret)
+
+	ret = eth_env_set_enetaddr("ethaddr", enetaddr);
+	if (ret)
 		pr_err("Failed to set mac address %pM from OTP: %d\n",
 		       enetaddr, ret);
 #endif
@@ -520,13 +521,13 @@ __weak int setup_mac_address(void)
 
 static int setup_serial_number(void)
 {
+	char *serial_env;
 	char serial_string[25];
 	u32 otp[3] = {0, 0, 0 };
 	struct udevice *dev;
 	int ret;
 
-	if (env_get("serial#"))
-		return 0;
+	serial_env = env_get("serial#");
 
 	ret = uclass_get_device_by_driver(UCLASS_MISC,
 					  DM_GET_DRIVER(stm32mp_bsec),
@@ -540,6 +541,15 @@ static int setup_serial_number(void)
 		return ret;
 
 	sprintf(serial_string, "%08X%08X%08X", otp[0], otp[1], otp[2]);
+
+	if (serial_env) {
+		if (!strcmp(serial_string, serial_env))
+			return 0;
+		/* For invalid enviromnent (serial# change), reset to default */
+		env_set_default("serial number mismatch", 0);
+	}
+
+	/* save serial number */
 	env_set("serial#", serial_string);
 
 	return 0;
@@ -547,9 +557,9 @@ static int setup_serial_number(void)
 
 int arch_misc_init(void)
 {
+	setup_serial_number();
 	setup_boot_mode();
 	setup_mac_address();
-	setup_serial_number();
 
 	return 0;
 }
