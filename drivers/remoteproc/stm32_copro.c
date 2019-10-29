@@ -23,7 +23,6 @@
  * @hold_boot_regmap:	regmap for remote processor reset hold boot
  * @hold_boot_offset:	offset of the register controlling the hold boot setting
  * @hold_boot_mask:	bitmask of the register for the hold boot field
- * @is_running:		is the remote processor running
  * @secured_soc:	TZEN flag (register protection)
  */
 struct stm32_copro_privdata {
@@ -31,7 +30,6 @@ struct stm32_copro_privdata {
 	struct regmap *hold_boot_regmap;
 	uint hold_boot_offset;
 	uint hold_boot_mask;
-	bool is_running;
 	bool secured_soc;
 };
 
@@ -199,10 +197,7 @@ static int stm32_copro_load(struct udevice *dev, ulong addr, ulong size)
  */
 static int stm32_copro_start(struct udevice *dev)
 {
-	struct stm32_copro_privdata *priv;
 	int ret;
-
-	priv = dev_get_priv(dev);
 
 	/* move hold boot from true to false start the copro */
 	ret = stm32_copro_set_hold_boot(dev, false);
@@ -214,7 +209,8 @@ static int stm32_copro_start(struct udevice *dev)
 	 * rebooting autonomously
 	 */
 	ret = stm32_copro_set_hold_boot(dev, true);
-	priv->is_running = !ret;
+	writel(ret ? TAMP_COPRO_STATE_OFF : TAMP_COPRO_STATE_CRUN,
+	       TAMP_COPRO_STATE);
 	return ret;
 }
 
@@ -240,7 +236,7 @@ static int stm32_copro_reset(struct udevice *dev)
 		return ret;
 	}
 
-	priv->is_running = false;
+	writel(TAMP_COPRO_STATE_OFF, TAMP_COPRO_STATE);
 
 	return 0;
 }
@@ -258,14 +254,11 @@ static int stm32_copro_stop(struct udevice *dev)
 /**
  * stm32_copro_is_running() - Is the STM32 remote processor running
  * @dev:	corresponding STM32 remote processor device
- * @return 1 if the remote processor is running, 0 otherwise
+ * @return 0 if the remote processor is running, 1 otherwise
  */
 static int stm32_copro_is_running(struct udevice *dev)
 {
-	struct stm32_copro_privdata *priv;
-
-	priv = dev_get_priv(dev);
-	return priv->is_running;
+	return (readl(TAMP_COPRO_STATE) == TAMP_COPRO_STATE_OFF);
 }
 
 static const struct dm_rproc_ops stm32_copro_ops = {
