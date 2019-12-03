@@ -38,6 +38,40 @@ void board_debug_uart_init(void)
 #endif
 
 #ifdef CONFIG_PMIC_STPMIC1
+u32 opp_voltage_mv;
+
+void board_vddcore_init(u32 voltage_mv)
+{
+	opp_voltage_mv = voltage_mv;
+}
+
+int board_vddcore_set(void)
+{
+	struct udevice *dev;
+	int ret;
+	u32 value;
+
+	if (!opp_voltage_mv)
+		return 0;
+
+	ret = uclass_get_device_by_driver(UCLASS_PMIC,
+					  DM_GET_DRIVER(pmic_stpmic1), &dev);
+	if (ret)
+		return ret;
+
+	/* VDDCORE= STMPCI1 BUCK1 ramp=+25mV, 5 => 725mV, 36 => 1500mV */
+	value = ((opp_voltage_mv - 725) / 25) + 5;
+	if (value < 5)
+		value = 5;
+	if (value > 36)
+		value = 36;
+
+	return pmic_clrsetbits(dev,
+			       STPMIC1_BUCKX_MAIN_CR(STPMIC1_BUCK1),
+			       STPMIC1_BUCK_VOUT_MASK,
+			       STPMIC1_BUCK_VOUT(value));
+}
+
 int board_ddr_power_init(enum ddr_type ddr_type)
 {
 	struct udevice *dev;
