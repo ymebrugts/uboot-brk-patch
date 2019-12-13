@@ -53,9 +53,17 @@ Currently the following boards are supported:
 
  + stm32mp157a-avenger96.dts
  + stm32mp157a-dk1.dts
+ + stm32mp157a-ed1.dts
+ + stm32mp157a-ev1.dts
  + stm32mp157c-dk2.dts
  + stm32mp157c-ed1.dts
  + stm32mp157c-ev1.dts
+ + stm32mp157d-dk1.dts
+ + stm32mp157d-ed1.dts
+ + stm32mp157d-ev1.dts
+ + stm32mp157f-dk2.dts
+ + stm32mp157f-ed1.dts
+ + stm32mp157f-ev1.dts
 
 Boot Sequences
 --------------
@@ -123,19 +131,27 @@ the supported device trees for STM32MP15x are:
 
 + ev1: eval board with pmic stpmic1 (ev1 = mother board + daughter ed1)
 
+   + stm32mp157a-ev1
    + stm32mp157c-ev1
+   + stm32mp157d-ev1
+   + stm32mp157f-ev1
 
 + ed1: daughter board with pmic stpmic1
 
+   + stm32mp157a-ed1
    + stm32mp157c-ed1
+   + stm32mp157d-ed1
+   + stm32mp157f-ed1
 
 + dk1: Discovery board
 
    + stm32mp157a-dk1
+   + stm32mp157d-dk1
 
 + dk2: Discovery board = dk1 with a BT/WiFI combo and a DSI panel
 
    + stm32mp157c-dk2
+   + stm32mp157f-dk2
 
 + avenger96: Avenger96 board from Arrow Electronics
 
