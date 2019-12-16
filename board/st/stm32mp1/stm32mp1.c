@@ -76,6 +76,39 @@ DECLARE_GLOBAL_DATA_PTR;
 #define USB_START_LOW_THRESHOLD_UV	1230000
 #define USB_START_HIGH_THRESHOLD_UV	2150000
 
+static void stboard_lock(struct udevice *dev)
+{
+	int ret;
+	u32 lock;
+	u32 mac[2];
+
+	ret = misc_read(dev, STM32_BSEC_LOCK(BSEC_OTP_BOARD),
+			&lock, sizeof(lock));
+	if (ret != sizeof(lock) || lock == 1)
+		return;
+
+	lock = 1;
+	misc_write(dev, STM32_BSEC_LOCK(BSEC_OTP_BOARD), &lock, sizeof(lock));
+	printf("Lock the BOARD OTP (%d)\n", BSEC_OTP_BOARD);
+
+	/* check LOCK status on MAC address */
+	ret = misc_read(dev, STM32_BSEC_SHADOW(BSEC_OTP_MAC),
+			&mac, sizeof(mac));
+	if (ret != sizeof(mac) || (mac[0] == 0x0 && mac[1] == 0x0))
+		return;
+
+	ret = misc_read(dev, STM32_BSEC_LOCK(BSEC_OTP_MAC),
+			&mac, sizeof(mac));
+	/* already locked : nothing to do */
+	if (ret != sizeof(mac) || (mac[0] == 1 && mac[1] == 1))
+		return;
+
+	mac[0] = 1;
+	mac[1] = 1;
+	misc_write(dev, STM32_BSEC_LOCK(BSEC_OTP_MAC), &mac, sizeof(mac));
+	printf("Lock the MAC OTP (%d)\n", BSEC_OTP_MAC);
+}
+
 int checkboard(void)
 {
 	int ret;
@@ -105,13 +138,19 @@ int checkboard(void)
 		if (!ret)
 			ret = misc_read(dev, STM32_BSEC_SHADOW(BSEC_OTP_BOARD),
 					&otp, sizeof(otp));
-		if (ret > 0 && otp)
+		if (ret > 0 && otp) {
 			printf("Board: MB%04x Var%d.%d Rev.%c-%02d\n",
 			       otp >> 16,
 			       (otp >> 12) & 0xF,
 			       (otp >> 4) & 0xF,
 			       ((otp >> 8) & 0xF) - 1 + 'A',
 			       otp & 0xF);
+
+			/* LOCK OTP for board ID and MAC address on ST board */
+			if (CONFIG_IS_ENABLED(TARGET_ST_STM32MP15x) &&
+			    ((otp >> 16) == 0x1272 || (otp >> 16) == 0x1263))
+				stboard_lock(dev);
+		}
 	}
 
 	return 0;
