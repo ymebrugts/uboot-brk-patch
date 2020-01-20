@@ -20,6 +20,7 @@
 	config {
 		u-boot,boot-led = "led1";
 		u-boot,error-led = "led4";
+		u-boot,mmc-env-partition = "ssbl";
 	};
 };
 
