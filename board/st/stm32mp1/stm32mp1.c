@@ -745,7 +745,8 @@ int board_late_init(void)
 
 	/* Check the boot-source to disable bootdelay */
 	boot_device = env_get("boot_device");
-	if (!strcmp(boot_device, "serial") || !strcmp(boot_device, "usb"))
+	if (boot_device &&
+	    (!strcmp(boot_device, "serial") || !strcmp(boot_device, "usb")))
 		env_set("bootdelay", "0");
 
 	return 0;
