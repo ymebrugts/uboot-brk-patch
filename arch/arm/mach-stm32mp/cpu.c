@@ -335,6 +335,9 @@ int print_cpuinfo(void)
 	case CPU_REVB:
 		cpu_r = "B";
 		break;
+	case CPU_REVZ:
+		cpu_r = "Z";
+		break;
 	default:
 		cpu_r = "?";
 		break;
