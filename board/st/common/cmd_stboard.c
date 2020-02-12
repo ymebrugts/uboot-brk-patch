@@ -31,9 +31,10 @@ static bool check_stboard(u16 board)
 
 static void display_stboard(u32 otp)
 {
-	printf("Board: MB%04x Var%d Rev.%c-%02d\n",
+	printf("Board: MB%04x Var%d.%d Rev.%c-%02d\n",
 	       otp >> 16,
 	       (otp >> 12) & 0xF,
+	       (otp >> 4) & 0xF,
 	       ((otp >> 8) & 0xF) - 1 + 'A',
 	       otp & 0xF);
 }
@@ -44,14 +45,14 @@ static int do_stboard(cmd_tbl_t *cmdtp, int flag, int argc,
 	int ret;
 	u32 otp, lock;
 	u8 revision;
-	unsigned long board, variant, bom;
+	unsigned long board, var_cpn, var_fg, bom;
 	struct udevice *dev;
-	int confirmed = argc == 6 && !strcmp(argv[1], "-y");
+	int confirmed = argc == 7 && !strcmp(argv[1], "-y");
 
 	argc -= 1 + confirmed;
 	argv += 1 + confirmed;
 
-	if (argc != 0 && argc != 4)
+	if (argc != 0 && argc != 5)
 		return CMD_RET_USAGE;
 
 	ret = uclass_get_device_by_driver(UCLASS_MISC,
@@ -95,8 +96,8 @@ static int do_stboard(cmd_tbl_t *cmdtp, int flag, int argc,
 		return CMD_RET_USAGE;
 	}
 
-	if (strict_strtoul(argv[1], 10, &variant) < 0 ||
-	    variant == 0 || variant > 15) {
+	if (strict_strtoul(argv[1], 10, &var_cpn) < 0 ||
+	    var_cpn == 0 || var_cpn > 15) {
 		printf("argument %d invalid: %s\n", 2, argv[1]);
 		return CMD_RET_USAGE;
 	}
@@ -107,13 +108,20 @@ static int do_stboard(cmd_tbl_t *cmdtp, int flag, int argc,
 		return CMD_RET_USAGE;
 	}
 
-	if (strict_strtoul(argv[3], 10, &bom) < 0 ||
+	if (strict_strtoul(argv[3], 10, &var_fg) < 0 ||
+	    var_fg > 15) {
+		printf("argument %d invalid: %s\n", 4, argv[3]);
+		return CMD_RET_USAGE;
+	}
+
+	if (strict_strtoul(argv[4], 10, &bom) < 0 ||
 	    bom == 0 || bom > 15) {
 		printf("argument %d invalid: %s\n", 4, argv[3]);
 		return CMD_RET_USAGE;
 	}
 
-	otp = (board << 16) | (variant << 12) | (revision << 8) | bom;
+	otp = (board << 16) | (var_cpn << 12) | (revision << 8) |
+	      (var_fg << 4) | bom;
 	display_stboard(otp);
 	printf("=> OTP[%d] = %08X\n", BSEC_OTP_BOARD, otp);
 
@@ -153,15 +161,16 @@ static int do_stboard(cmd_tbl_t *cmdtp, int flag, int argc,
 	return CMD_RET_SUCCESS;
 }
 
-U_BOOT_CMD(stboard, 6, 0, do_stboard,
+U_BOOT_CMD(stboard, 7, 0, do_stboard,
 	   "read/write board reference in OTP",
 	   "\n"
 	   "  Print current board information\n"
-	   "stboard [-y] <Board> <Variant> <Revision> <BOM>\n"
+	   "stboard [-y] <Board> <VarCPN> <Revision> <VarFG> <BOM>\n"
 	   "  Write board information\n"
 	   "  - Board: xxxx, example 1264 for MB1264\n"
-	   "  - Variant: 1 ... 15\n"
+	   "  - VarCPN: 1...15\n"
 	   "  - Revision: A...O\n"
+	   "  - VarFG: 0...15\n"
 	   "  - BOM: 1...15\n");
 
 #endif
