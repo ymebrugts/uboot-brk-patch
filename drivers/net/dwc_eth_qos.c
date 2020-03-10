@@ -305,6 +305,8 @@ struct eqos_priv {
 	struct clk clk_slave_bus;
 	struct mii_dev *mii;
 	struct phy_device *phy;
+	int phyaddr;
+	u32 max_speed;
 	void *descs;
 	struct eqos_desc *tx_descs;
 	struct eqos_desc *rx_descs;
@@ -1080,12 +1082,21 @@ static int eqos_start(struct udevice *dev)
 	 * don't need to reconnect/reconfigure again
 	 */
 	if (!eqos->phy) {
-		eqos->phy = phy_connect(eqos->mii, -1, dev,
+		eqos->phy = phy_connect(eqos->mii, eqos->phyaddr, dev,
 					eqos->config->interface(dev));
 		if (!eqos->phy) {
 			pr_err("phy_connect() failed");
 			goto err_stop_resets;
 		}
+
+		if (eqos->max_speed) {
+			ret = phy_set_supported(eqos->phy, eqos->max_speed);
+			if (ret) {
+				pr_err("phy_set_supported() failed: %d", ret);
+				goto err_shutdown_phy;
+			}
+		}
+
 		ret = phy_config(eqos->phy);
 		if (ret < 0) {
 			pr_err("phy_config() failed: %d", ret);
@@ -1639,6 +1650,8 @@ static int eqos_probe_resources_stm32(struct udevice *dev)
 	int ret;
 	phy_interface_t interface;
 	struct ofnode_phandle_args phandle_args;
+	/* Hardcode for now */
+	eqos->phyaddr = -1;
 
 	debug("%s(dev=%p):\n", __func__, dev);
 
@@ -1652,6 +1665,8 @@ static int eqos_probe_resources_stm32(struct udevice *dev)
 	ret = board_interface_eth_init(dev, interface);
 	if (ret)
 		return -EINVAL;
+
+	eqos->max_speed = dev_read_u32_default(dev, "max-speed", 0);
 
 	ret = clk_get_by_name(dev, "stmmaceth", &eqos->clk_master_bus);
 	if (ret) {
@@ -1688,6 +1703,9 @@ static int eqos_probe_resources_stm32(struct udevice *dev)
 		if (ret)
 			pr_warn("gpio_request_by_name(phy reset) not provided %d",
 				ret);
+
+		eqos->phyaddr = ofnode_read_u32_default(phandle_args.node,
+							"reg", -1);
 	}
 
 	debug("%s: OK\n", __func__);
