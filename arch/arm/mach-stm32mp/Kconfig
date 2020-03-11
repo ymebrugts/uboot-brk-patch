@@ -70,6 +70,7 @@ config TARGET_ST_STM32MP15x
 	imply DISABLE_CONSOLE
 	imply PRE_CONSOLE_BUFFER
 	imply SILENT_CONSOLE
+	imply VERSION_VARIABLE
 	help
 		target the STMicroelectronics board with SOC STM32MP15x
 		managed by board/st/stm32mp1:

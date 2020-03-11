@@ -165,7 +165,14 @@
 	"splashimage=0xc4300000\0"  \
 	"ramdisk_addr_r=0xc4400000\0" \
 	"altbootcmd=run bootcmd\0" \
-	"env_check=if env info -p -d -q; then env save; fi\0" \
+	"env_check=" \
+		"env exists env_ver || env set env_ver ${ver};" \
+		"if env info -p -d -q; then env save; fi;" \
+		"if test \"$env_ver\" != \"$ver\"; then" \
+		" echo \"*** Warning: old environment ${env_ver}\";" \
+		" echo '* set default: env default -a; env save; reset';" \
+		" echo '* update current: env set env_ver ${ver}; env save';" \
+		"fi;\0" \
 	STM32MP_BOOTCMD \
 	BOOTENV \
 	"boot_net_usb_start=true\0"
