@@ -272,9 +272,11 @@ static int get_led(struct udevice **dev, char *led_string)
 
 	return 0;
 }
+#endif
 
 static int setup_led(enum led_state_t cmd)
 {
+#ifdef CONFIG_LED
 	struct udevice *dev;
 	int ret;
 
@@ -284,8 +286,10 @@ static int setup_led(enum led_state_t cmd)
 
 	ret = led_set_state(dev, cmd);
 	return ret;
-}
+#else
+	return 0;
 #endif
+}
 
 static void __maybe_unused led_error_blink(u32 nb_blink)
 {
@@ -640,8 +644,10 @@ int board_init(void)
 
 	sysconf_init();
 
-	if (CONFIG_IS_ENABLED(CONFIG_LED))
+	if (CONFIG_IS_ENABLED(LED)) {
 		led_default_state();
+		setup_led(LEDST_ON);
+	}
 
 	return 0;
 }
