@@ -25,7 +25,7 @@
 DECLARE_GLOBAL_DATA_PTR;
 
 #if CONFIG_IS_ENABLED(OF_CONTROL)
-static inline int mmc_offset_try_partition(const char *str, s64 *val)
+static inline int mmc_offset_try_partition(const char *str, int copy, s64 *val)
 {
 	disk_partition_t info;
 	struct blk_desc *desc;
@@ -48,7 +48,7 @@ static inline int mmc_offset_try_partition(const char *str, s64 *val)
 	len = DIV_ROUND_UP(CONFIG_ENV_SIZE, info.blksz);
 
 	/* use the top of the partion for the environment */
-	*val = (info.start + info.size - len) * info.blksz;
+	*val = (info.start + info.size - (1 + copy) * len) * info.blksz;
 
 	return 0;
 }
@@ -73,7 +73,7 @@ static inline s64 mmc_offset(int copy)
 	str = fdtdec_get_config_string(gd->fdt_blob, dt_prop.partition);
 	if (str) {
 		/* try to place the environment at end of the partition */
-		err = mmc_offset_try_partition(str, &val);
+		err = mmc_offset_try_partition(str, copy, &val);
 		if (!err)
 			return val;
 	}
