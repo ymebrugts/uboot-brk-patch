@@ -39,7 +39,6 @@
 &clk_hse {
 	st,digbypass;
 };
-#endif
 
 &i2c4 {
 	u-boot,dm-pre-reloc;
@@ -169,6 +168,7 @@
 		u-boot,dm-spl;
 	};
 };
+#endif
 
 &uart4 {
 	u-boot,dm-pre-reloc;

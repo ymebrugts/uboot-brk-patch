@@ -31,6 +31,7 @@
 			st,mem-speed = <DDR_MEM_SPEED>;
 			st,mem-size = <DDR_MEM_SIZE>;
 
+#ifndef CONFIG_STM32MP1_TRUSTED
 			st,ctl-reg = <
 				DDR_MSTR
 				DDR_MRCTRL0
@@ -148,6 +149,7 @@
 				DDR_DX3DQTR
 				DDR_DX3DQSTR
 			>;
+#endif
 
 #endif
 

@@ -16,6 +16,7 @@
 	};
 };
 
+#ifndef CONFIG_STM32MP1_TRUSTED
 &flash0 {
 	u-boot,dm-spl;
 };
@@ -59,6 +60,7 @@
 	clocks = <&rcc SAI4>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
 };
 
+#endif
 
 /* TEMP: force peripheral for USB OTG */
 &usbotg_hs {
