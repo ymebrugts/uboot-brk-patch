@@ -210,6 +210,19 @@
 #define STM32MP_ANDROID
 #endif/* CONFIG_CMD_DTIMG */
 
+#ifdef CONFIG_FASTBOOT_CMD_OEM_FORMAT
+/* eMMC default partitions for fastboot command: oem format */
+#define PARTS_DEFAULT \
+	"partitions=" \
+	"name=ssbl,size=2M;" \
+	"name=bootfs,size=64MB,bootable;" \
+	"name=vendorfs,size=16M;" \
+	"name=rootfs,size=746M;" \
+	"name=userfs,size=-\0"
+#else
+#define PARTS_DEFAULT
+#endif
+
 #include <config_distro_bootcmd.h>
 
 /*
@@ -236,6 +249,7 @@
 		"fi;\0" \
 	STM32MP_BOOTCMD \
 	STM32MP_ANDROID \
+	PARTS_DEFAULT \
 	BOOTENV \
 	"boot_net_usb_start=true\0"
 
