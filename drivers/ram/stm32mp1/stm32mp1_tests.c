@@ -742,7 +742,7 @@ static enum test_result test_noise_burst(struct stm32mp1_ddrctl *ctl,
 	int i;
 	enum test_result res = TEST_PASSED;
 
-	if (get_bufsize(string, argc, argv, 0, &bufsize, 4 * 1024, 8))
+	if (get_bufsize(string, argc, argv, 0, &bufsize, 4 * 1024, 128))
 		return TEST_ERROR;
 	if (get_pattern(string, argc, argv, 1, &pattern, 0xFFFFFFFF))
 		return TEST_ERROR;
