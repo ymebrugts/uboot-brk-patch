@@ -1,0 +1,5 @@
+mailbox-uclass.c:32:5:mbox_get_by_index	112	static
+mailbox-uclass.c:86:5:mbox_get_by_name	16	static
+mailbox-uclass.c:102:5:mbox_free	0	static
+mailbox-uclass.c:114:5:mbox_send	0	static
+mailbox-uclass.c:123:5:mbox_recv	24	static

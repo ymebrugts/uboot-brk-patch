@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-stm32mp/cmd_stm32prog/built-in.o :=  /usr/bin/arm-linux-gnueabi-ld.bfd     -r -o arch/arm/mach-stm32mp/cmd_stm32prog/built-in.o arch/arm/mach-stm32mp/cmd_stm32prog/cmd_stm32prog.o arch/arm/mach-stm32mp/cmd_stm32prog/stm32prog.o arch/arm/mach-stm32mp/cmd_stm32prog/stm32prog_serial.o arch/arm/mach-stm32mp/cmd_stm32prog/stm32prog_usb.o 

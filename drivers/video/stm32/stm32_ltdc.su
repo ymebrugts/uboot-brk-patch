@@ -1,0 +1,2 @@
+stm32_ltdc.c:451:12:stm32_ltdc_bind	8	static
+stm32_ltdc.c:327:12:stm32_ltdc_probe	216	static

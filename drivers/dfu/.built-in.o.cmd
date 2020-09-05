@@ -1,0 +1,1 @@
+cmd_drivers/dfu/built-in.o :=  /usr/bin/arm-linux-gnueabi-ld.bfd     -r -o drivers/dfu/built-in.o drivers/dfu/dfu.o drivers/dfu/dfu_mmc.o drivers/dfu/dfu_mtd.o drivers/dfu/dfu_ram.o drivers/dfu/dfu_virt.o 

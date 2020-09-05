@@ -1,0 +1,17 @@
+stm32prog_serial.c:298:13:stm32prog_serial_putc	16	static
+stm32prog_serial.c:470:13:stm32prog_serial_result	16	static
+stm32prog_serial.c:483:13:get_cmd_command	16	static
+stm32prog_serial.c:501:13:get_version_command	8	static
+stm32prog_serial.c:512:13:get_id_command	8	static
+stm32prog_serial.c:252:12:stm32prog_serial_getc_err	16	static
+stm32prog_serial.c:268:11:stm32prog_serial_getc	8	static
+stm32prog_serial.c:446:12:get_address	16	static
+stm32prog_serial.c:561:13:read_memory_command	24	static
+stm32prog_serial.c:61:27:stm32prog_get_entity	0	static
+stm32prog_serial.c:76:12:stm32prog_write	24	static
+stm32prog_serial.c:606:13:start_command	24	static
+stm32prog_serial.c:845:13:read_partition_command	304	static
+stm32prog_serial.c:526:13:get_phase_command	24	static
+stm32prog_serial.c:638:13:download_command	64	static
+stm32prog_serial.c:184:5:stm32prog_serial_init	48	static
+stm32prog_serial.c:923:6:stm32prog_serial_loop	56	static

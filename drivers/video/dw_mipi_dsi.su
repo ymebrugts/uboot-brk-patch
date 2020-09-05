@@ -1,0 +1,7 @@
+dw_mipi_dsi.c:438:13:dw_mipi_dsi_video_mode_config	0	static
+dw_mipi_dsi.c:460:13:dw_mipi_dsi_set_mode	16	static
+dw_mipi_dsi.c:814:12:dw_mipi_dsi_probe	0	static
+dw_mipi_dsi.c:799:12:dw_mipi_dsi_enable	8	static
+dw_mipi_dsi.c:273:12:dw_mipi_dsi_host_attach	8	static
+dw_mipi_dsi.c:402:16:dw_mipi_dsi_host_transfer	64	static
+dw_mipi_dsi.c:758:12:dw_mipi_dsi_init	72	static

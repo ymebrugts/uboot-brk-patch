@@ -1,0 +1,7 @@
+serial_stm32.c:51:12:stm32_serial_setconfig	16	static
+serial_stm32.c:143:12:stm32_serial_pending	8	static
+serial_stm32.c:99:12:stm32_serial_getc	8	static
+serial_stm32.c:216:12:stm32_serial_ofdata_to_platdata	16	static
+serial_stm32.c:172:12:stm32_serial_probe	72	static
+serial_stm32.c:41:12:stm32_serial_setbrg	16	static
+serial_stm32.c:136:12:stm32_serial_putc	8	static

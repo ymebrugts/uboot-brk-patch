@@ -1,0 +1,6 @@
+scmi_agent.c:267:12:scmi_agent_remove	8	static
+scmi_agent.c:141:12:mbox_process_msg	32	static
+scmi_agent.c:283:12:scmi_agent_bind	40	static
+scmi_agent.c:277:12:scmi_agent_probe	136	static
+scmi_agent.c:42:5:scmi_to_linux_errno	0	static
+scmi_agent.c:260:5:scmi_agent_process_msg	16	static

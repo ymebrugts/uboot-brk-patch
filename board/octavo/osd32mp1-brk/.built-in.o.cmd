@@ -1,0 +1,1 @@
+cmd_board/octavo/osd32mp1-brk/built-in.o :=  /usr/bin/arm-linux-gnueabi-ld.bfd     -r -o board/octavo/osd32mp1-brk/built-in.o board/octavo/osd32mp1-brk/../../st/stm32mp1/board.o board/octavo/osd32mp1-brk/board.o board/octavo/osd32mp1-brk/../../st/common/stm32mp_mtdparts.o board/octavo/osd32mp1-brk/../../st/common/stm32mp_dfu.o 

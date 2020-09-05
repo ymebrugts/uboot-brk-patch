@@ -1,0 +1,11 @@
+board.c:526:13:board_copro_image_process	24	static
+board.c:78:5:setup_mac_address	24	static
+board.c:113:5:checkboard	16	static
+board.c:186:5:g_dnl_board_usb_cable_connected	16	static
+board.c:203:5:g_dnl_bind_fixup	16	static
+board.c:377:5:board_init	40	static
+board.c:405:5:board_late_init	16	static
+board.c:430:6:board_quiesce_devices	16	static
+board.c:438:5:board_interface_eth_init	16	static
+board.c:507:19:env_get_location	0	static
+board.c:520:5:ft_board_setup	0	static

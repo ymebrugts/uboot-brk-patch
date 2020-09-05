@@ -1,0 +1,5 @@
+clk_scmi.c:32:12:scmi_clk_gate	48	static
+clk_scmi.c:61:12:scmi_clk_disable	0	static
+clk_scmi.c:56:12:scmi_clk_enable	0	static
+clk_scmi.c:114:14:scmi_clk_set_rate	56	static
+clk_scmi.c:76:14:scmi_clk_get_rate	48	static

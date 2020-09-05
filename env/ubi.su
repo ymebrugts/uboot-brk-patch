@@ -1,0 +1,2 @@
+ubi.c:32:12:env_ubi_save	8272	static
+ubi.c:103:12:env_ubi_load	16536	static

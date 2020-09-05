@@ -1,0 +1,2 @@
+dram_init.c:13:5:dram_init	24	static
+dram_init.c:36:7:board_get_usable_ram_top	168	static

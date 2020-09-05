@@ -1,0 +1,7 @@
+stm32_dsi.c:236:13:dsi_phy_post_set_mode	8	static
+stm32_dsi.c:384:12:stm32_dsi_set_backlight	16	static
+stm32_dsi.c:337:12:stm32_dsi_attach	144	static
+stm32_dsi.c:205:12:dsi_phy_init	16	static
+stm32_dsi.c:417:12:stm32_dsi_probe	64	static
+stm32_dsi.c:405:12:stm32_dsi_bind	16	static
+stm32_dsi.c:260:12:dsi_get_lane_mbps	88	static

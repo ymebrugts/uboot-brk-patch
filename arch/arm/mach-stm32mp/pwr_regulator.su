@@ -1,0 +1,9 @@
+pwr_regulator.c:33:12:stm32mp_pwr_write	48	static
+pwr_regulator.c:54:12:stm32mp_pwr_read	16	static
+pwr_regulator.c:67:12:stm32mp_pwr_ofdata_to_platdata	16	static
+pwr_regulator.c:84:12:stm32mp_pwr_bind	8	static
+pwr_regulator.c:210:12:stm32mp_pwr_regulator_get_enable	24	static
+pwr_regulator.c:225:12:stm32mp_pwr_regulator_set_enable	32	static
+pwr_regulator.c:178:12:stm32mp_pwr_regulator_set_value	8	static
+pwr_regulator.c:194:12:stm32mp_pwr_regulator_get_value	8	static
+pwr_regulator.c:140:12:stm32mp_pwr_regulator_probe	32	static

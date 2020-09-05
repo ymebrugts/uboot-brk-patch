@@ -1,0 +1,3 @@
+optee.c:18:5:optee_verify_image	20	static
+optee.c:40:5:optee_verify_bootm_image	56	static
+optee.c:121:5:optee_copy_fdt_nodes	64	static

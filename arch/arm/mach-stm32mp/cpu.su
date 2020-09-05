@@ -1,0 +1,12 @@
+cpu.c:263:12:get_otp	24	static
+cpu.c:188:5:get_bootmode	0	static
+cpu.c:198:5:arch_cpu_init	8	static
+cpu.c:232:6:enable_caches	0	static
+cpu.c:253:5:get_cpu_dev	8	static
+cpu.c:258:5:get_cpu_rev	8	static
+cpu.c:286:5:get_cpu_type	8	static
+cpu.c:292:5:get_cpu_package	0	static
+cpu.c:297:6:get_soc_name	24	static
+cpu.c:383:5:print_cpuinfo	32	static
+cpu.c:501:12:setup_mac_address	40	static
+cpu.c:579:5:arch_misc_init	128	static

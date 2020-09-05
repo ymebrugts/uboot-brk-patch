@@ -1,0 +1,2 @@
+stm32mp_mtdparts.c:28:13:board_set_mtdparts.constprop	24	static
+stm32mp_mtdparts.c:64:6:board_mtdparts_default	40	static

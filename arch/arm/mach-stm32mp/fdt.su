@@ -1,0 +1,3 @@
+fdt.c:133:13:fdt_disable_subnode_by_address	24	static
+fdt.c:214:13:stm32_fdt_disable	16	static
+fdt.c:246:5:ft_system_setup	72	static

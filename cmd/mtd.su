@@ -1,0 +1,12 @@
+mtd.c:547:1:complete_mtd	24	static
+mtd.c:51:13:mtd_dump_buf	32	static
+mtd.c:101:13:mtd_show_parts	48	static
+mtd.c:20:25:get_mtd_by_name	16	static
+mtd.c:455:12:do_mtd_bad	24	static
+mtd.c:196:12:do_mtd_list	40	static
+mtd.c:486:12:mtd_name_complete	32	static
+mtd.c:547:1:do_mtd	24	static
+mtd.c:46:13:mtd_is_aligned_with_block_size.isra.0	24	static
+mtd.c:383:12:do_mtd_erase	136	static
+mtd.c:34:13:mtd_len_to_pages.isra.2	24	static
+mtd.c:241:12:do_mtd_io	144	static

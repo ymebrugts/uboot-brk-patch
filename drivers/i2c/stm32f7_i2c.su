@@ -1,0 +1,5 @@
+stm32f7_i2c.c:846:12:stm32_ofdata_to_platdata	16	static
+stm32f7_i2c.c:807:12:stm32_i2c_probe	32	static
+stm32f7_i2c.c:793:12:stm32_i2c_set_bus_speed	128	static
+stm32f7_i2c.c:310:12:stm32_i2c_wait_flags.isra.4	24	static
+stm32f7_i2c.c:458:12:stm32_i2c_xfer	40	static

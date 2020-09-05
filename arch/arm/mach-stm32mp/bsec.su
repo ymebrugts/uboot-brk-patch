@@ -1,0 +1,4 @@
+bsec.c:472:12:stm32mp_bsec_ofdata_to_platdata	16	static
+bsec.c:384:12:stm32mp_bsec_read	80	static
+bsec.c:426:12:stm32mp_bsec_write	80	static
+bsec.c:513:6:bsec_dbgswenable	16	static

@@ -1,0 +1,2 @@
+boot_params.c:20:6:save_boot_params	0	static
+boot_params.c:32:7:board_fdt_blob_setup	0	static

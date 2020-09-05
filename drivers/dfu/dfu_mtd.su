@@ -1,0 +1,8 @@
+dfu_mtd.c:144:12:dfu_get_medium_size_mtd	0	static
+dfu_mtd.c:223:21:dfu_polltimeout_mtd	0	static
+dfu_mtd.c:185:12:dfu_flush_medium_mtd	104	static
+dfu_mtd.c:15:13:mtd_is_aligned_with_block_size.isra.0	24	static
+dfu_mtd.c:20:12:mtd_block_op	200	static
+dfu_mtd.c:168:12:dfu_write_medium_mtd	8	static
+dfu_mtd.c:151:12:dfu_read_medium_mtd	8	static
+dfu_mtd.c:236:5:dfu_fill_entity_mtd	80	static

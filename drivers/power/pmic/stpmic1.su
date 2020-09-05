@@ -1,0 +1,8 @@
+stpmic1.c:42:12:stpmic1_reg_count	0	static
+stpmic1.c:47:12:stpmic1_write	16	static
+stpmic1.c:60:12:stpmic1_read	16	static
+stpmic1.c:234:12:stpmic1_sysreset_request	16	static
+stpmic1.c:126:12:stpmic1_nvm_rw	32	static
+stpmic1.c:208:12:stpmic1_nvm_write	16	static
+stpmic1.c:195:12:stpmic1_nvm_read	16	static
+stpmic1.c:72:12:stpmic1_bind	8	static

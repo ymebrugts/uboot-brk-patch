@@ -1,0 +1,3 @@
+board.c:43:6:board_vddcore_init	0	static
+board.c:48:5:board_vddcore_set	16	static
+board.c:75:5:board_ddr_power_init	24	static

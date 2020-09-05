@@ -1,0 +1,1 @@
+cmd_drivers/misc/built-in.o :=  /usr/bin/arm-linux-gnueabi-ld.bfd     -r -o drivers/misc/built-in.o drivers/misc/misc-uclass.o drivers/misc/i2c_eeprom.o drivers/misc/stm32mp_fuse.o drivers/misc/stm32_rcc.o drivers/misc/scmi_agent.o 

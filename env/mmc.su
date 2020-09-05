@@ -1,0 +1,6 @@
+mmc.c:153:20:init_mmc_for_env	16	static
+mmc.c:31:12:mmc_get_env_dev	0	static
+mmc.c:116:12:mmc_get_env_addr	192	static
+mmc.c:260:12:env_mmc_erase	48	static
+mmc.c:197:12:env_mmc_save	8296	static
+mmc.c:308:12:env_mmc_load	16568	static

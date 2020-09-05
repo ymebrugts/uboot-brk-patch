@@ -1,0 +1,1 @@
+cmd_drivers/remoteproc/built-in.o :=  /usr/bin/arm-linux-gnueabi-ld.bfd     -r -o drivers/remoteproc/built-in.o drivers/remoteproc/rproc-uclass.o drivers/remoteproc/rproc-elf-loader.o drivers/remoteproc/stm32_copro.o 

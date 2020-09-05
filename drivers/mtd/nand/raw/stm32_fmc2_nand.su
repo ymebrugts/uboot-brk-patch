@@ -1,0 +1,14 @@
+stm32_fmc2_nand.c:179:13:stm32_fmc2_timings_init	16	static
+stm32_fmc2_nand.c:239:13:stm32_fmc2_select_chip	4	static
+stm32_fmc2_nand.c:291:13:stm32_fmc2_cmd_ctrl	0	static
+stm32_fmc2_nand.c:803:12:stm32_fmc2_calc_ecc_bytes	0	static
+stm32_fmc2_nand.c:366:12:stm32_fmc2_ham_correct	16	static
+stm32_fmc2_nand.c:752:12:stm32_fmc2_setup_interface	40	static
+stm32_fmc2_nand.c:527:12:stm32_fmc2_read_page	80	static
+stm32_fmc2_nand.c:274:13:stm32_fmc2_set_ecc.isra.1	0	static
+stm32_fmc2_nand.c:312:13:stm32_fmc2_hwctl	16	static
+stm32_fmc2_nand.c:472:12:stm32_fmc2_bch_correct	56	static
+stm32_fmc2_nand.c:424:12:stm32_fmc2_bch_calculate	24	static
+stm32_fmc2_nand.c:339:12:stm32_fmc2_ham_calculate	16	static
+stm32_fmc2_nand.c:894:12:stm32_fmc2_probe	88	static
+stm32_fmc2_nand.c:1050:6:board_nand_init	16	static

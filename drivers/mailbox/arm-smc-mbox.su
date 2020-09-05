@@ -1,0 +1,8 @@
+arm-smc-mbox.c:49:12:smc_mbox_recv	0	static
+arm-smc-mbox.c:55:12:smc_mbox_request	0	static
+arm-smc-mbox.c:65:12:smc_mbox_of_xlate	0	static
+arm-smc-mbox.c:36:12:smc_mbox_send	8	static
+arm-smc-mbox.c:29:13:smccc_hvc	48	static
+arm-smc-mbox.c:22:13:smccc_smc	48	static
+arm-smc-mbox.c:76:12:smc_mbox_ofdata_to_platdata	24	static
+arm-smc-mbox.c:60:12:smc_mbox_free	0	static

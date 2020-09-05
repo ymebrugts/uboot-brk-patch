@@ -1,0 +1,3 @@
+stm32mp1_ram.c:189:12:stm32mp1_ddr_get_info	8	static
+stm32mp1_ram.c:159:12:stm32mp1_ddr_probe	24	static
+stm32mp1_ram.c:23:5:stm32mp1_ddr_clk_enable	64	static

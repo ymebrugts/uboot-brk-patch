@@ -1,0 +1,17 @@
+pinctrl-stmfx.c:238:12:stmfx_gpio_probe	96	static
+pinctrl-stmfx.c:332:12:stmfx_pinctrl_get_pins_count	8	static
+pinctrl-stmfx.c:413:12:stmfx_pinctrl_probe	8	static
+pinctrl-stmfx.c:404:12:stmfx_pinctrl_bind	24	static
+pinctrl-stmfx.c:500:12:stmfx_probe	24	static
+pinctrl-stmfx.c:348:20:stmfx_pinctrl_get_pin_name	8	static
+pinctrl-stmfx.c:129:12:stmfx_gpio_set	16	static
+pinctrl-stmfx.c:74:12:stmfx_read_reg	16	static
+pinctrl-stmfx.c:137:12:stmfx_gpio_get_function	8	static
+pinctrl-stmfx.c:124:12:stmfx_gpio_get	0	static
+pinctrl-stmfx.c:199:12:stmfx_gpio_get_dir_flags	24	static
+pinctrl-stmfx.c:87:12:stmfx_write_reg	24	static
+pinctrl-stmfx.c:148:12:stmfx_gpio_direction_input	0	static
+pinctrl-stmfx.c:153:12:stmfx_gpio_direction_output	16	static
+pinctrl-stmfx.c:386:12:stmfx_pinctrl_get_pin_muxing	24	static
+pinctrl-stmfx.c:163:12:stmfx_gpio_set_dir_flags	16	static
+pinctrl-stmfx.c:289:12:stmfx_pinctrl_conf_set	24	static

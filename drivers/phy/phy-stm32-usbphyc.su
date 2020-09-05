@@ -1,0 +1,6 @@
+phy-stm32-usbphyc.c:250:12:stm32_usbphyc_phy_power_off	8	static
+phy-stm32-usbphyc.c:232:12:stm32_usbphyc_phy_power_on	8	static
+phy-stm32-usbphyc.c:145:12:stm32_usbphyc_phy_init	32	static
+phy-stm32-usbphyc.c:298:12:stm32_usbphyc_of_xlate	8	static
+phy-stm32-usbphyc.c:327:12:stm32_usbphyc_probe	128	static
+phy-stm32-usbphyc.c:193:12:stm32_usbphyc_phy_exit	16	static

@@ -1,0 +1,6 @@
+stm32mp_dfu.c:70:13:board_get_alt_info_mtd	40	static
+stm32mp_dfu.c:18:13:board_get_alt_info_mmc	216	static
+stm32mp_dfu.c:101:6:set_dfu_alt_info	1112	static
+stm32mp_dfu.c:206:5:dfu_read_medium_virt	40	static
+stm32mp_dfu.c:224:5:dfu_write_medium_virt	0	static
+stm32mp_dfu.c:234:12:dfu_get_medium_size_virt	0	static

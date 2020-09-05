@@ -1,0 +1,9 @@
+stm32mp1_ddr.c:551:13:ddrphy_idone_wait	16	static
+stm32mp1_ddr.c:589:13:wait_sw_done_ack	16	static
+stm32mp1_ddr.c:301:13:set_reg	32	static
+stm32mp1_ddr.c:541:13:stm32mp1_ddr_interactive	0	static
+stm32mp1_ddr.c:568:6:stm32mp1_ddrphy_init	8	static
+stm32mp1_ddr.c:637:6:stm32mp1_refresh_disable	0	static
+stm32mp1_ddr.c:648:6:stm32mp1_refresh_restore	0	static
+stm32mp1_ddr.c:663:12:board_ddr_power_init	0	static
+stm32mp1_ddr.c:669:6:stm32mp1_ddr_init	24	static

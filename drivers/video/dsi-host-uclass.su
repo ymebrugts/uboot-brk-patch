@@ -1,0 +1,2 @@
+dsi-host-uclass.c:12:5:dsi_host_init	4	static
+dsi-host-uclass.c:26:5:dsi_host_enable	0	static

@@ -1,0 +1,11 @@
+clk_stm32mp1.c:894:14:pll_get_fvco	32	static
+clk_stm32mp1.c:928:14:stm32mp1_read_pll_freq	16	static
+clk_stm32mp1.c:947:14:stm32mp1_clk_get	56	static
+clk_stm32mp1.c:2249:12:stm32mp1_clk_probe	56	static
+clk_stm32mp1.c:786:12:stm32mp1_clk_get_id.isra.1	8	static
+clk_stm32mp1.c:1159:12:stm32mp1_clk_disable	16	static
+clk_stm32mp1.c:1140:12:stm32mp1_clk_enable	16	static
+clk_stm32mp1.c:829:12:stm32mp1_clk_get_parent	16	static
+clk_stm32mp1.c:1180:14:stm32mp1_clk_get_rate	16	static
+clk_stm32mp1.c:2130:14:stm32mp1_clk_set_rate	24	static
+clk_stm32mp1.c:2229:5:soc_clk_dump	80	static

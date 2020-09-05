@@ -1,0 +1,4 @@
+stm32-adc.c:64:12:stm32_adc_stop	8	static
+stm32-adc.c:77:12:stm32_adc_start_channel	24	static
+stm32-adc.c:203:12:stm32_adc_probe	112	static
+stm32-adc.c:136:12:stm32_adc_channel_data	16	static

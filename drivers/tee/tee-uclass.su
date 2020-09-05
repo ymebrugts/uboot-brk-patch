@@ -1,0 +1,14 @@
+tee-uclass.c:174:12:tee_pre_probe	8	static
+tee-uclass.c:27:6:tee_get_version	0	static
+tee-uclass.c:32:5:tee_open_session	4	static
+tee-uclass.c:38:5:tee_close_session	0	static
+tee-uclass.c:43:5:tee_invoke_func	4	static
+tee-uclass.c:49:5:__tee_shm_add	32	static
+tee-uclass.c:99:5:tee_shm_alloc	16	static
+tee-uclass.c:109:5:tee_shm_register	16	static
+tee-uclass.c:119:6:tee_shm_free	8	static
+tee-uclass.c:183:12:tee_pre_remove	8	static
+tee-uclass.c:136:6:tee_shm_is_registered	8	static
+tee-uclass.c:148:17:tee_find_device	24	static
+tee-uclass.c:211:6:tee_optee_ta_uuid_from_octets	0	static
+tee-uclass.c:221:6:tee_optee_ta_uuid_to_octets	0	static

@@ -1,0 +1,11 @@
+stm32_spi.c:110:13:stm32_spi_write_txfifo	8	static
+stm32_spi.c:139:13:stm32_spi_read_rxfifo	20	static
+stm32_spi.c:267:12:stm32_spi_set_mode	16	static
+stm32_spi.c:322:12:stm32_spi_set_speed	16	static
+stm32_spi.c:208:12:stm32_spi_release_bus	8	static
+stm32_spi.c:197:12:stm32_spi_claim_bus	8	static
+stm32_spi.c:219:13:stm32_spi_stopxfer	16	static
+stm32_spi.c:249:12:stm32_spi_set_cs	16	static
+stm32_spi.c:356:12:stm32_spi_xfer	32	static
+stm32_spi.c:572:12:stm32_spi_remove	16	static
+stm32_spi.c:480:12:stm32_spi_probe	40	static

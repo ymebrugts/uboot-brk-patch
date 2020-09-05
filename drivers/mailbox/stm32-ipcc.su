@@ -1,0 +1,5 @@
+stm32-ipcc.c:54:12:stm32_ipcc_free	0	static
+stm32-ipcc.c:76:12:stm32_ipcc_recv	8	static
+stm32-ipcc.c:61:12:stm32_ipcc_send	8	static
+stm32-ipcc.c:39:12:stm32_ipcc_request	8	static
+stm32-ipcc.c:96:12:stm32_ipcc_probe	56	static

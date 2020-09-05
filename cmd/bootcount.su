@@ -1,0 +1,3 @@
+bootcount.c:30:12:do_bootcount	24	static
+bootcount.c:14:12:do_bootcount_reset	8	static
+bootcount.c:7:12:do_bootcount_print	8	static

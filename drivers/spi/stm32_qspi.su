@@ -1,0 +1,9 @@
+stm32_qspi.c:163:13:_stm32_qspi_read_fifo	0	static
+stm32_qspi.c:168:13:_stm32_qspi_write_fifo	0	static
+stm32_qspi.c:430:12:stm32_qspi_release_bus	8	static
+stm32_qspi.c:394:12:stm32_qspi_claim_bus	16	static
+stm32_qspi.c:322:12:stm32_qspi_probe	96	static
+stm32_qspi.c:124:12:_stm32_qspi_wait_for_not_busy.isra.0	16	static
+stm32_qspi.c:439:12:stm32_qspi_set_speed	24	static
+stm32_qspi.c:478:12:stm32_qspi_set_mode	16	static
+stm32_qspi.c:235:12:stm32_qspi_exec_op	40	static

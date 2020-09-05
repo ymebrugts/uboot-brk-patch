@@ -1,0 +1,6 @@
+i2c_eeprom.c:40:12:i2c_eeprom_std_write	32	static
+i2c_eeprom.c:34:12:i2c_eeprom_std_read	0	static
+i2c_eeprom.c:68:12:i2c_eeprom_std_ofdata_to_platdata	24	static
+i2c_eeprom.c:14:5:i2c_eeprom_read	4	static
+i2c_eeprom.c:86:12:i2c_eeprom_std_probe	16	static
+i2c_eeprom.c:24:5:i2c_eeprom_write	4	static

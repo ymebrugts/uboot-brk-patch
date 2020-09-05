@@ -1,0 +1,4 @@
+dfu_virt.c:10:12:dfu_write_medium_virt	0	static
+dfu_virt.c:18:12:dfu_get_medium_size_virt	0	static
+dfu_virt.c:25:12:dfu_read_medium_virt	0	static
+dfu_virt.c:34:5:dfu_fill_entity_virt	8	static

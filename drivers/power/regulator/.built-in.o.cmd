@@ -1,0 +1,1 @@
+cmd_drivers/power/regulator/built-in.o :=  /usr/bin/arm-linux-gnueabi-ld.bfd     -r -o drivers/power/regulator/built-in.o drivers/power/regulator/regulator-uclass.o drivers/power/regulator/regulator_common.o drivers/power/regulator/fixed.o drivers/power/regulator/gpio-regulator.o drivers/power/regulator/stm32-vrefbuf.o drivers/power/regulator/stpmic1.o 

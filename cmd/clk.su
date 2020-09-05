@@ -1,0 +1,4 @@
+clk.c:17:13:show_clks	32	static
+clk.c:93:12:do_clk	24	static
+clk.c:54:12:soc_clk_dump	8	static
+clk.c:75:12:do_clk_dump	8	static

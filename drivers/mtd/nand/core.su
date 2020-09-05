@@ -1,0 +1,7 @@
+core.c:25:6:nanddev_isbad	24	static
+core.c:64:5:nanddev_markbad	16	static
+core.c:105:6:nanddev_isreserved	16	static
+core.c:129:5:nanddev_erase	16	static
+core.c:156:5:nanddev_mtd_erase	64	static
+core.c:190:5:nanddev_init	24	static
+core.c:235:6:nanddev_cleanup	0	static

@@ -1,0 +1,5 @@
+stm32-vrefbuf.c:79:12:stm32_vrefbuf_get_enable	8	static
+stm32-vrefbuf.c:86:12:stm32_vrefbuf_set_value	8	static
+stm32-vrefbuf.c:102:12:stm32_vrefbuf_get_value	8	static
+stm32-vrefbuf.c:38:12:stm32_vrefbuf_set_enable	16	static
+stm32-vrefbuf.c:120:12:stm32_vrefbuf_probe	24	static

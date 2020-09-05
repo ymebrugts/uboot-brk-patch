@@ -1,0 +1,9 @@
+stm32_rtc.c:88:13:stm32_rtc_unlock	8	static
+stm32_rtc.c:138:13:stm32_rtc_exit_init_mode	8	static
+stm32_rtc.c:61:12:stm32_rtc_get	16	static
+stm32_rtc.c:103:12:stm32_rtc_enter_init_mode	16	static
+stm32_rtc.c:121:12:stm32_rtc_wait_sync	16	static
+stm32_rtc.c:280:12:stm32_rtc_probe	96	static
+stm32_rtc.c:147:12:stm32_rtc_set_time	24	static
+stm32_rtc.c:196:12:stm32_rtc_reset	0	static
+stm32_rtc.c:170:12:stm32_rtc_set	32	static

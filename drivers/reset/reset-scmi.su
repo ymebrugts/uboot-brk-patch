@@ -1,0 +1,5 @@
+reset-scmi.c:65:12:scmi_reset_request	0	static
+reset-scmi.c:29:12:scmi_reset_set_state	48	static
+reset-scmi.c:60:12:scmi_reset_deassert	0	static
+reset-scmi.c:55:12:scmi_reset_assert	0	static
+reset-scmi.c:70:12:scmi_reset_free	0	static

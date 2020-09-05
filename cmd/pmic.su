@@ -1,0 +1,7 @@
+pmic.c:194:12:do_pmic	24	static
+pmic.c:17:12:failure	8	static
+pmic.c:152:12:do_write	16	static
+pmic.c:113:12:do_read	48	static
+pmic.c:76:12:do_dump	40	static
+pmic.c:49:12:do_list	56	static
+pmic.c:24:12:do_dev	16	static

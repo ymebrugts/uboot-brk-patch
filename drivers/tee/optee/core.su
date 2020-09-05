@@ -1,0 +1,15 @@
+core.c:130:13:optee_get_version	0	static
+core.c:140:12:get_msg_arg	32	static
+core.c:160:12:to_msg_param	32	static
+core.c:199:12:from_msg_param	32	static
+core.c:295:12:do_call_with_arg	80	static
+core.c:473:12:optee_shm_unregister	24	static
+core.c:401:12:optee_invoke_func	32	static
+core.c:330:12:optee_close_session	24	static
+core.c:349:12:optee_open_session	32	static
+core.c:569:13:optee_smccc_smc	32	static
+core.c:578:13:optee_smccc_hvc	32	static
+core.c:618:12:optee_probe	64	static
+core.c:607:12:optee_ofdata_to_platdata	16	static
+core.c:76:7:optee_alloc_and_init_page_list	24	static
+core.c:438:12:optee_shm_register	40	static

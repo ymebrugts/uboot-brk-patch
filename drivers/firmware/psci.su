@@ -1,0 +1,4 @@
+psci.c:65:12:psci_probe	16	static
+psci.c:48:12:psci_bind	8	static
+psci.c:27:29:invoke_psci_fn	56	static
+psci.c:134:5:do_poweroff	16	static

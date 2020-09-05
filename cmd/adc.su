@@ -1,0 +1,6 @@
+adc.c:155:1:complete_adc	24	static
+adc.c:98:12:do_adc_scan	296	static
+adc.c:71:12:do_adc_single	32	static
+adc.c:34:12:do_adc_info	40	static
+adc.c:11:12:do_adc_list	16	static
+adc.c:155:1:do_adc	24	static

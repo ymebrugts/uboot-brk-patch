@@ -1,0 +1,10 @@
+stm32_gpio.c:28:13:stm32_gpio_set_moder	8	static
+stm32_gpio.c:270:12:gpio_stm32_probe	144	static
+stm32_gpio.c:82:5:stm32_offset_to_index	8	static
+stm32_gpio.c:219:12:stm32_gpio_get_dir_flags	24	static
+stm32_gpio.c:187:12:stm32_gpio_set_dir_flags	24	static
+stm32_gpio.c:160:12:stm32_gpio_get_function	16	static
+stm32_gpio.c:145:12:stm32_gpio_set_value	24	static
+stm32_gpio.c:132:12:stm32_gpio_get_value	16	static
+stm32_gpio.c:114:12:stm32_gpio_direction_output	24	static
+stm32_gpio.c:99:12:stm32_gpio_direction_input	16	static

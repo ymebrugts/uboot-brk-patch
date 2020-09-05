@@ -1,0 +1,9 @@
+stm32_sdmmc2.c:621:12:stm32_sdmmc2_host_power_cycle	8	static
+stm32_sdmmc2.c:609:12:stm32_sdmmc2_getcd	8	static
+stm32_sdmmc2.c:504:13:stm32_sdmmc2_reset	16	static
+stm32_sdmmc2.c:568:12:stm32_sdmmc2_set_ios	24	static
+stm32_sdmmc2.c:638:12:stm32_sdmmc2_probe	40	static
+stm32_sdmmc2.c:709:12:stm32_sdmmc_bind	8	static
+stm32_sdmmc2.c:238:13:stm32_sdmmc2_start_cmd.isra.0	12	static
+stm32_sdmmc2.c:287:12:stm32_sdmmc2_end_cmd.isra.3	24	static
+stm32_sdmmc2.c:429:12:stm32_sdmmc2_send_cmd	88	static

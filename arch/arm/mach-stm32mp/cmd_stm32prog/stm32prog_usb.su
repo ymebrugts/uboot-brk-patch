@@ -1,0 +1,5 @@
+stm32prog_usb.c:126:5:stm32prog_write_medium_virt	24	static
+stm32prog_usb.c:148:5:stm32prog_read_medium_virt	24	static
+stm32prog_usb.c:170:5:stm32prog_get_medium_size_virt	0	static
+stm32prog_usb.c:194:6:stm32prog_usb_loop	184	static
+stm32prog_usb.c:228:5:g_dnl_get_board_bcd_device_number	0	static

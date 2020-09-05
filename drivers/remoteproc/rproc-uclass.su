@@ -1,0 +1,16 @@
+rproc-uclass.c:190:12:rproc_post_probe	0	static
+rproc-uclass.c:246:12:_rproc_dev_is_probed	0	static
+rproc-uclass.c:30:12:for_each_remoteproc_device	24	static
+rproc-uclass.c:108:12:rproc_pre_probe	24	static
+rproc-uclass.c:225:12:_rproc_probe_dev	0	static
+rproc-uclass.c:351:12:_rproc_ops_wrapper	16	static
+rproc-uclass.c:62:12:_rproc_name_is_unique	16	static
+rproc-uclass.c:256:6:rproc_is_initialized	8	static
+rproc-uclass.c:262:5:rproc_init	8	static
+rproc-uclass.c:275:5:rproc_dev_init	16	static
+rproc-uclass.c:294:5:rproc_load	24	static
+rproc-uclass.c:413:5:rproc_start	0	static
+rproc-uclass.c:418:5:rproc_stop	0	static
+rproc-uclass.c:423:5:rproc_reset	0	static
+rproc-uclass.c:428:5:rproc_ping	0	static
+rproc-uclass.c:433:5:rproc_is_running	0	static

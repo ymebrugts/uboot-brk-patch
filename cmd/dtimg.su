@@ -1,0 +1,6 @@
+dtimg.c:150:12:do_dtimg	24	static
+dtimg.c:102:12:do_dtimg_getindex	544	static
+dtimg.c:41:12:dtimg_get_fdt	104	static
+dtimg.c:96:12:do_dtimg_size	0	static
+dtimg.c:90:12:do_dtimg_start	0	static
+dtimg.c:16:12:do_dtimg_dump	24	static

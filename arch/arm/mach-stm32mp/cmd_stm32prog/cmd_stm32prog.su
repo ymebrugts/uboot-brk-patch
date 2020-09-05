@@ -1,0 +1,3 @@
+cmd_stm32prog.c:41:12:do_stm32prog	152	static
+cmd_stm32prog.c:177:6:stm32prog_get_tee_partitions	0	static
+cmd_stm32prog.c:185:6:stm32prog_get_fsbl_nor	0	static

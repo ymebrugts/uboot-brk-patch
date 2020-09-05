@@ -1,0 +1,4 @@
+macronix.c:30:12:mx35lfxge4ab_ooblayout_ecc	0	static
+macronix.c:36:12:mx35lfxge4ab_ooblayout_free	0	static
+macronix.c:117:12:macronix_spinand_detect	8	static
+macronix.c:63:12:mx35lf1ge4ab_ecc_get_status	72	static

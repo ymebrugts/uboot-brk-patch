@@ -1,0 +1,8 @@
+stm32_copro.c:275:12:stm32_copro_is_running	0	static
+stm32_copro.c:147:14:stm32_copro_device_to_virt	32	static
+stm32_copro.c:112:12:stm32_copro_set_hold_boot	48	static
+stm32_copro.c:238:12:stm32_copro_reset	16	static
+stm32_copro.c:265:12:stm32_copro_stop	0	static
+stm32_copro.c:207:12:stm32_copro_start	16	static
+stm32_copro.c:175:12:stm32_copro_load	40	static
+stm32_copro.c:43:12:stm32_copro_probe	32	static
